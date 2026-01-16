@@ -6,8 +6,7 @@ O projeto permite o cadastro, visualização e gerenciamento de produtos/ativos,
 
 ## 📸 Interface do sistema
 
-![Tela inicial do sistema](<img width="1869" height="578" alt="Captura de tela_2026-01-16_15-25-08" src="https://github.com/user-attachments/assets/e04cb2c0-6ef6-43dd-a852-236daa1dc8d3" />
-)
+![Tela inicial do sistema](docs/interface.png)
 
 ---
 
