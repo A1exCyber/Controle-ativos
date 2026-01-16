@@ -6,7 +6,7 @@ O projeto permite o cadastro, visualização e gerenciamento de produtos/ativos,
 
 ## 📸 Interface do sistema
 
-![Tela inicial do sistema](docs/interface.png)
+![Tela inicial do sistema (listagem de ativos)](docs/interface.png)
 
 ---
 
