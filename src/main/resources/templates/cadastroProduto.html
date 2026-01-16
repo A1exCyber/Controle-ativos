@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${produto.id == null ? 'Novo Produto' : 'Editar Produto'}">Sistema</title>
+    <link rel="stylesheet" th:href="@{/css/cadastroProduto.css}">
+</head>
+
+<body>
+
+    <main class="cadastro-container">
+        <h2 th:text="${produto.id == null ? 'Cadastrar Novo Produto' : 'Editar Produto'}"></h2>
+
+        <form th:action="@{/salvarProduto}" th:object="${produto}" method="post">
+            <input type="hidden" th:field="*{id}" />
+
+            <div class="form-group">
+                <label for="nome">Nome do Produto:</label>
+                <input type="text" th:id="nome" th:field="*{nome}" placeholder="Ex: Teclado k120" required />
+            </div>
+
+            <div class="form-group">
+                <label for="serie">Número de Série:</label>
+                <input type="text" th:id="serie" th:field="*{numeroSerie}" placeholder="Digite o código..." />
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-salvar">Salvar Alterações</button>
+
+                <th:block th:if="${produto.id != null}">
+                    <a th:href="@{/gerenciarLocatario/{id}(id=${produto.id})}" class="btn btn-locatario">
+                        Gerenciar Locatário
+                    </a>
+                    <a th:href="@{/excluirProduto/{id}(id=${produto.id})}" class="btn btn-excluir"
+                        onclick="return confirm('Deseja excluir?')">
+                        Excluir Produto
+                    </a>
+                </th:block>
+
+                <a href="/home" class="btn btn-voltar">Cancelar e Voltar</a>
+            </div>
+        </form>
+    </main>
+
+    <script th:src="@{/js/cadastro.js}"></script>
+</body>
+
+</html>

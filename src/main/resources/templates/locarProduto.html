@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/locarProduto.css}">
+    <title>Página de locação</title>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2 th:text="'Locar: ' + ${produto.nome}">Locar Produto</h2>
+
+        <form th:action="@{/confirmarLocacao}" method="post">
+            <input type="hidden" name="id" th:value="${produto.id}">
+
+            <label>Colaborador:</label>
+            <input type="text" name="alocadoPara" required>
+
+            <label>Matrícula:</label>
+            <input type="text" name="matriculaColaborador" required>
+
+            <label>Data de Retorno:</label>
+            <input type="date" name="dataRetorno" required>
+
+            <button type="submit" class="btn-confirmar">Confirmar Locação</button>
+        </form>
+
+        <button class="btn-cancelar" onclick="window.location.href='/home'">Cancelar</button>
+    </div>
+</body>
+
+</html>

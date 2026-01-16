@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" th:href="@{/css/home.css}">
+</head>
+
+<body>
+
+    <header class="topo">
+        <h1>Bem-vindo ao projeto Intranet</h1>
+
+        <div class="acoes-topo">
+            <button id="btnCadastro">Cadastrar Novo Item</button>
+            <button class="logout" onclick="logout()">Sair</button>
+        </div>
+    </header>
+
+    <main>
+        <h2>Produtos</h2>
+        <form th:action="@{/home}" method="get"
+            style="margin-bottom: 20px; display: flex; gap: 10px; justify-content: center;">
+            <input type="text" name="busca" placeholder="O que você está procurando?"
+                style="padding: 10px; border-radius: 5px; border: 1px solid #ccc; width: 350px;">
+            <button type="submit" class="btn-alocar" style="width: auto;">Pesquisar</button>
+            <a th:href="@{/home}" class="btn-cancelar"
+                style="width: auto; text-decoration: none; padding: 10px 20px;">Limpar</a>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Nº Série</th>
+                    <th>Alocado Para</th>
+                    <!-- <th>Matrícula Colaborador</th> -->
+                    <!--<th>Data de Retirada</th> -->
+                    <th>Data de Devolução</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr th:each="produto : ${produtos}">
+                    <td th:text="${produto.nome}"></td>
+                    <td th:text="${produto.numeroSerie}"></td>
+                    <td th:text="${produto.alocadoPara}"></td>
+                    <!-- <td th:text="${produto.matriculaColaborador}"></td>-->
+                    <!-- <td
+                        th:text="${produto.dataRetirada != null ? #temporals.format(produto.dataRetirada, 'dd/MM/yyyy') : '-'}">
+                    </td>-->
+                    <td
+                        th:text="${produto.dataRetorno != null ? #temporals.format(produto.dataRetorno, 'dd/MM/yyyy') : '-'}">
+                    </td>
+                    <td>
+                        <span class="status" th:text="${produto.status}" th:classappend="${produto.status}">
+                        </span>
+                    </td>
+                    <td>
+                        <a th:if="${produto.status == 'Disponível'}" th:href="@{/locarProduto/{id}(id=${produto.id})}"
+                            class="btn-alocar">
+                            Alocar
+                        </a>
+                        <a th:unless="${produto.status == 'Disponível'}"
+                            th:href="@{/devolverProduto/{id}(id=${produto.id})}" class="btn-devolver">
+                            Devolver
+                        </a>
+                        <a th:href="@{/editarProduto/{id}(id=${produto.id})}" class="btn-alocar">Editar</a>
+                        <!-- <a th:href="@{/excluirProduto/{id}(id=${produto.id})}" class="btn-excluir">Excluir</a>-->
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </main>
+
+    <script th:src="@{/js/home.js}"></script>
+</body>
+
+</html>

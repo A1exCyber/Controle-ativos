@@ -1,0 +1,106 @@
+/* Layout do Container Principal */
+.cadastro-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cadastro-container h2 {
+    color: #1f2937;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+/* Grupos de Formulário */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Garante que o padding não estoure a largura */
+}
+
+/* Barra de Ações (Botões) */
+.form-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center; /* Alinha todos os centros na mesma linha horizontal */
+    margin-top: 30px;
+    width: 100%;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+
+.btn:hover {
+    filter: brightness(90%);
+}
+
+.btn-salvar { background-color: #198754; color: white; }
+.btn-locatario { background-color: #ffc107; color: #000; }
+.btn-excluir { background-color: #d9534f; color: white; }
+.btn-voltar { color: #6b7280; margin-left: auto; }
+
+.btn-voltar {
+    background-color: #6c757d; /* Cinza profissional */
+    color: white !important;   /* Força o branco mesmo sendo link */
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    display: inline-block;
+    transition: background-color 0.2s;
+}
+
+.btn-voltar:hover {
+    background-color: #5a6268;
+    color: white;
+}
+
+/* Estilo unificado para todos os botões e links-botão */
+.btn, .btn-salvar, .btn-locatario, .btn-excluir, .btn-voltar {
+    height: 42px;          /* Altura fixa garante que todos fiquem iguais */
+    display: flex;         /* Transforma em flex para centralizar o texto internamente */
+    align-items: center;   /* Centraliza o texto verticalmente */
+    justify-content: center; /* Centraliza o texto horizontalmente */
+    padding: 0 20px;       /* Padding lateral */
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box; /* Crucial para o padding não aumentar a altura */
+}
+
+/* Ajuste específico do Voltar para ficar no final da linha (se desejar) */
+.btn-voltar {
+    background-color: #6c757d;
+    color: white !important;
+    margin-left: auto;     /* Empurra o botão para a direita, mantendo o alinhamento */
+}

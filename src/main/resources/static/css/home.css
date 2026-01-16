@@ -1,0 +1,220 @@
+/* Reset básico */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+/* Cabeçalho */
+.topo {
+    background-color: #1f2937;
+    color: #fff;
+    padding: 20px;
+}
+
+.topo h1 {
+    margin: 0 0 10px 0;
+}
+
+.acoes-topo {
+    display: flex;
+    gap: 10px;
+}
+
+.acoes-topo button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.acoes-topo button:hover {
+    opacity: 0.9;
+}
+
+button.logout {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+#btnCadastro {
+    background-color: #198754;
+    color: #fff;
+}
+
+/* Conteúdo */
+main {
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: transparent; /* Removemos do grupo */
+}
+
+thead th {
+    background-color: #e5e7eb; /* Pintamos cada célula individualmente */
+    padding: 12px 8px;
+    color: #374151;
+    font-weight: 600;
+    border-bottom: 2px solid #d1d5db;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #f9fafb;
+}
+
+/* Status */
+.status {
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    text-transform: capitalize;
+
+    background-color: #d4edda;
+    color: #155724;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+/* Disponível */
+.status.Disponivel {
+    color: #155724;
+    background-color: #d4edda;
+}
+
+/* Locado */
+.status.alocado {
+    color: #721c24;
+    background-color: #f8d7da;
+}
+
+/* Botão Alocar (Verde ou Azul) */
+.btn-alocar {
+    background-color: #28a745;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+/* Botão Devolver (Laranja - indica uma transição) */
+.btn-devolver {
+    background-color: #ffc107;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+/* Botão Excluir (Vermelho - indica perigo/finalização) */
+.btn-excluir {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+main {
+    padding: 30px;
+    max-width: 1500px; /* Limita a largura máxima para não esticar em monitores UltraWide */
+    margin: 0 auto;
+}
+
+/* Atualize esta parte no seu CSS */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Mantém as larguras fixas */
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+/* Ajuste de larguras para 6 colunas */
+th:nth-child(1) { width: 25%; } /* Nome (Mais espaço para nomes longos) */
+th:nth-child(2) { width: 15%; } /* Série */
+th:nth-child(3) { width: 15%; } /* Alocado Para */
+th:nth-child(4) { width: 15%; } /* Devolução */
+th:nth-child(5) { width: 10%; } /* Status */
+th:nth-child(6) { width: 20%; } /* Ações (Espaço para Alocar + Editar) */
+
+/* Novo estilo para o botão Editar que agora está na tabela */
+.btn-editar {
+    background-color: #198754; /* Verde sucesso */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.btn-editar:hover {
+    background-color: #157347;
+}
+
+/* Responsivo */
+@media (max-width: 821px) {
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 12px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 10px;
+    }
+
+    td {
+        border: none;
+        padding: 6px 0;
+    }
+
+    td::before {
+        font-weight: bold;
+        display: block;
+    }
+
+    td:nth-child(1)::before {
+        content: "Nome";
+    }
+
+    td:nth-child(2)::before {
+        content: "Status";
+    }
+}

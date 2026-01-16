@@ -1,0 +1,75 @@
+/* Centralização total da tela */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f2f5; /* Um cinza bem clarinho para destacar o branco */
+    font-family: Arial, sans-serif;
+}
+
+/* O "quadrado" branco no centro */
+.form-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px; /* Isso impede o botão de ocupar a tela toda */
+    text-align: center; /* Centraliza o título */
+}
+
+h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+/* Alinhamento dos inputs */
+label {
+    display: block;
+    text-align: left; /* Nome do campo alinhado à esquerda */
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Essencial para não estourar a largura */
+}
+
+/* Padronização dos Botões */
+button {
+    width: 100%; /* Agora ele segue o limite de 400px do container */
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* Mantendo suas cores originais */
+.btn-confirmar {
+    background-color: #28a745; /* Verde do Alocar */
+    color: white;
+    margin-bottom: 10px;
+}
+
+.btn-confirmar:hover {
+    background-color: #218838;
+}
+
+.btn-cancelar {
+    background-color: #6c757d; /* Cinza do seu botão original */
+    color: white;
+}
+
+.btn-cancelar:hover {
+    background-color: #5a6268;
+}
