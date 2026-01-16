@@ -1,8 +1,14 @@
-# Controle de Ativos
-
 Sistema de controle de ativos desenvolvido em **Java com Spring Boot**, com foco em aprendizado de backend, organização de código e boas práticas.
 
 O projeto permite o cadastro, visualização e gerenciamento de produtos/ativos, integrando backend, banco de dados e uma interface web simples.
+
+---
+
+## 📸 Interface do sistema
+
+![Tela inicial do sistema](<img width="1870" height="580" alt="image" src="https://github.com/user-attachments/assets/772f6d87-d795-4248-a918-b3a74eb843be" />
+)
+)
 
 ---
 
