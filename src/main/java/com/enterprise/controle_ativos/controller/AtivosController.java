@@ -3,7 +3,9 @@ package com.enterprise.controle_ativos.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model; // IMPORT CORRETO AQUI
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.enterprise.controle_ativos.model.Produto;
 import com.enterprise.controle_ativos.service.ProdutoService; // IMPORT DO SEU SERVICE
@@ -28,6 +30,13 @@ public class AtivosController {
     public String cadastroProduto(Model model) {
         model.addAttribute("produto", new Produto());
         return "cadastroProduto";
+    }
+
+    // 2. ESTE É O QUE ESTÁ FALTANDO (O que resolve o erro 405)
+    @PostMapping("/cadastroProduto")
+    public String salvarProduto(@ModelAttribute("produto") Produto produto) {
+        produtoService.salvar(produto); // Salva no banco
+        return "redirect:/home"; // Redireciona após o sucesso
     }
 
     @GetMapping("/locarProduto/{id}")

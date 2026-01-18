@@ -13,7 +13,7 @@
     <main class="cadastro-container">
         <h2 th:text="${produto.id == null ? 'Cadastrar Novo Produto' : 'Editar Produto'}"></h2>
 
-        <form th:action="@{/salvarProduto}" th:object="${produto}" method="post">
+        <form th:action="@{/cadastroProduto}" th:object="${produto}" method="post">
             <input type="hidden" th:field="*{id}" />
 
             <div class="form-group">
@@ -27,7 +27,7 @@
             </div>
 
             <div class="form-actions">
-                <button type="submit" class="btn btn-salvar">Salvar Alterações</button>
+                <button id="btnCadastro" type="submit" class="btn btn-salvar">Salvar Alterações</button>
 
                 <th:block th:if="${produto.id != null}">
                     <a th:href="@{/gerenciarLocatario/{id}(id=${produto.id})}" class="btn btn-locatario">
