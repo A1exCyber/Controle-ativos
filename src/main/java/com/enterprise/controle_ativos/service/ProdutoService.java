@@ -18,12 +18,32 @@ public class ProdutoService {
     }
 
     // Método Salvar:
-    public void salvar(Produto produto) {
-        // Se for um produto novo (ID nulo) e o status estiver vazio
-        if (produto.getId() == null && (produto.getStatus() == null || produto.getStatus().isEmpty())) {
-            produto.setStatus("Disponível");
+    public void salvar(Produto produtoForm) {
+
+        // SE FOR EDIÇÃO
+        if (produtoForm.getId() != null) {
+
+            Produto produtoBanco = buscarPorId(produtoForm.getId());
+
+            // Atualiza apenas os campos do formulário
+            produtoBanco.setNome(produtoForm.getNome());
+            produtoBanco.setNumeroSerie(produtoForm.getNumeroSerie());
+
+            // Se quiser permitir editar status manualmente, aí sim:
+            if (produtoForm.getStatus() != null) {
+                produtoBanco.setStatus(produtoForm.getStatus());
+            }
+
+            repository.save(produtoBanco);
+            return;
         }
-        repository.save(produto);
+
+        // SE FOR CADASTRO NOVO
+        if (produtoForm.getStatus() == null || produtoForm.getStatus().isEmpty()) {
+            produtoForm.setStatus("Disponível");
+        }
+
+        repository.save(produtoForm);
     }
 
     public Produto criarProduto(Produto produto) {

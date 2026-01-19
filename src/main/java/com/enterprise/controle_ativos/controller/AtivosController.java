@@ -50,4 +50,15 @@ public class AtivosController {
         return "locarProduto";
     }
 
+    @GetMapping("/gerenciarLocatario/{id}")
+    public String gerenciarLocatario(@PathVariable Long id, Model model) {
+
+        Produto produto = produtoService.buscarPorId(id);
+        model.addAttribute("produto", produto);
+
+        model.addAttribute("locatario", produto.getAlocadoPara());
+
+        return "locarProduto"; // seu HTML de locação
+    }
+
 }

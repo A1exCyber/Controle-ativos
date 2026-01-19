@@ -12,17 +12,17 @@
     <div class="form-container">
         <h2 th:text="'Locar: ' + ${produto.nome}">Locar Produto</h2>
 
-        <form th:action="@{/confirmarLocacao}" method="post">
-            <input type="hidden" name="id" th:value="${produto.id}">
+        <form th:action="@{/confirmarLocacao}" th:object="${produto}" method="post">
+            <input type="hidden" th:field="*{id}">
 
             <label>Colaborador:</label>
-            <input type="text" name="alocadoPara" required>
+            <input type="text" th:field="*{alocadoPara}" required>
 
             <label>Matrícula:</label>
-            <input type="text" name="matriculaColaborador" required>
+            <input type="text" th:field="*{matriculaColaborador}" required>
 
             <label>Data de Retorno:</label>
-            <input type="date" name="dataRetorno" required>
+            <input type="date" th:field="*{dataRetorno}" required>
 
             <button type="submit" class="btn-confirmar">Confirmar Locação</button>
         </form>

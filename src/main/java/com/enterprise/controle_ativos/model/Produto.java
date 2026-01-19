@@ -2,6 +2,7 @@ package com.enterprise.controle_ativos.model;
 
 import java.time.LocalDate;
 import jakarta.persistence.*; // Importa todas as ferramentas de persistência
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity // Diz que o produto agora é uma tabela
 @Table(name = "produtos") // Esse é o nome da tabela que será criada...
@@ -16,7 +17,11 @@ public class Produto {
     private String status;
     private String alocadoPara;
     private String matriculaColaborador;
+
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate dataRetorno;
+
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate dataRetirada;
 
     // construtor...
