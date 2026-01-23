@@ -13,18 +13,22 @@ O projeto permite o cadastro, visualização e gerenciamento de produtos/ativos,
 
 ## 🛠️ Tecnologias utilizadas
 
-* Java
+* Java 17
 * Spring Boot
+* Spring MVC
 * Spring Data JPA
 * Maven
 * PostgreSQL
-* HTML, CSS e JavaScript
 * Thymeleaf
+* HTML5, CSS3
 
 ---
 
 ## 📌 Funcionalidades atuais
 
+* Tela de login (em desenvolvimento)
+* Controle de status do ativo (Disponível / Locado)
+* Alocação e devolução de ativos
 * Cadastro de produtos/ativos
 * Listagem de ativos
 * Estrutura MVC (Controller, Service, Repository)
@@ -106,5 +110,7 @@ Este projeto tem como objetivos:
 
 ## 👤 Autor
 
-**Alex Gomes**
-Estudante de Ciência da Computação e desenvolvedor Java em formação
+**Alex Gomes**  
+Estudante de Ciência da Computação e desenvolvedor Java em formação.  
+Projeto focado em backend com Spring Boot, aplicando boas práticas, MVC e persistência com JPA.
+
