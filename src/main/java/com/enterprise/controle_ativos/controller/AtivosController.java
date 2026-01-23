@@ -21,11 +21,6 @@ public class AtivosController {
         this.produtoService = produtoService;
     }
 
-    @GetMapping({ "/", "/index" })
-    public String index() {
-        return "index";
-    }
-
     @GetMapping("/cadastroProduto")
     public String cadastroProduto(Model model) {
         model.addAttribute("produto", new Produto());

@@ -1,27 +1,26 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
 </head>
 
 <body>
+    <div class="container">
 
-    <h1>Login Intranet</h1>
+        <h1>Login Intranet</h1>
 
-    <form action="">
-        <label>Login:</label><br>
-        <input type="text" id="login" name="login" value="michaelw"><br><br>
+        <form th:action="@{/index}" th:object="${loginDTO}" method="post">
 
-        <label>Senha:</label><br>
-        <input type="password" id="password" name="password" value="michaelwpass"><br><br><button
-            type="submit">Entrar</button>
-    </form>
+            <label>Login:</label>
+            <input type="text" th:field="*{login}">
 
-    <pre id="resultado">Aguardando login...</pre>
+            <label>Senha:</label>
+            <input type="password" th:field="*{senha}">
 
+            <button type="submit">Entrar</button>
+        </form>
 
+        <pre th:text="${mensagem} ?: 'Aguardando login...'"></pre>
+
+    </div>
 </body>
-
-</html>
